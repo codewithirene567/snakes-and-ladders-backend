@@ -7,9 +7,7 @@ class GameController < ApplicationController
       def create
           game = Game.new(game_params)
           game.save
-          games = []
-          games.push(game)
-          render json: GameSerializer.new(games)
+          render json: GameSerializer.new(Game.all)
 
       end
 

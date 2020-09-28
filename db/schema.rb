@@ -12,11 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2020_09_28_004816) do
 
-  create_table "create_games", force: :cascade do |t|
+  create_table "games", force: :cascade do |t|
     t.integer "currPlayer"
     t.boolean "winStatus"
     t.string "winnerName"
     t.string "timeStamp"
+    t.integer "gameId"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

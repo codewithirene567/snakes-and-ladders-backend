@@ -1,10 +1,11 @@
-class CreateCreateGames < ActiveRecord::Migration[6.0]
+class CreateGames < ActiveRecord::Migration[6.0]
   def change
-    create_table :create_games do |t|
+    create_table :games do |t|
       t.integer :currPlayer
       t.boolean :winStatus
       t.string :winnerName
       t.string :timeStamp
+      t.integer :gameId
     
       t.timestamps
     end

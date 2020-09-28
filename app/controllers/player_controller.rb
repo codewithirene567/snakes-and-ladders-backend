@@ -1,15 +1,13 @@
 class PlayerController < ApplicationController
     def index
         players = Player.all
-        render json: PlayerSerializer.new(games).to_serialized_json
+        render json: PlayerSerializer.new(players).to_serialized_json
       end
 
       def create
           player = Player.new(player_params)
           player.save
-          players = []
-          players.push(player)
-          render json: PlayerSerializer.new(players)
+          render json: PlayerSerializer.new(Player.all)
 
       end
 
