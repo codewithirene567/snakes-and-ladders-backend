@@ -3,7 +3,7 @@ class CreatePlayers < ActiveRecord::Migration[6.0]
     create_table :players do |t|
       t.string :name
       t.integer :currentPostion
-      t.timestamp :timeStamp
+      t.integer :timeStamp
       t.integer :playerId
 
      

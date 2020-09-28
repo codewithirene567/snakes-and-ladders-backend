@@ -4,7 +4,7 @@ class CreateGames < ActiveRecord::Migration[6.0]
       t.integer :currPlayer
       t.boolean :winStatus
       t.string :winnerName
-      t.timestamp :timeStamp
+      t.integer :timeStamp
     
     
      

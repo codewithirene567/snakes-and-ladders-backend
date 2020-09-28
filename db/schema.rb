@@ -16,13 +16,13 @@ ActiveRecord::Schema.define(version: 2020_09_28_004816) do
     t.integer "currPlayer"
     t.boolean "winStatus"
     t.string "winnerName"
-    t.datetime "timeStamp"
+    t.integer "timeStamp"
   end
 
   create_table "players", force: :cascade do |t|
     t.string "name"
     t.integer "currentPostion"
-    t.datetime "timeStamp"
+    t.integer "timeStamp"
     t.integer "playerId"
   end
 

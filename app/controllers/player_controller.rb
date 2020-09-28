@@ -7,6 +7,7 @@ class PlayerController < ApplicationController
       def create
           player = Player.new(player_params)
           player.save
+         
           render json: PlayerSerializer.new(Player.all)
 
       end
@@ -18,7 +19,7 @@ class PlayerController < ApplicationController
       end
 
        def player_params
-         params.require(:player).permit(:name, :currentPostion, :gameId, :playerId)
+         params.require(:player).permit(:id, :name, :currentPostion, :playerId, :timeStamp)
       end
      
 end
