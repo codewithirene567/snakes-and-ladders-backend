@@ -7,7 +7,9 @@ class PlayerController < ApplicationController
       def create
           player = Player.new(player_params)
           player.save
-          render json: PlayerSerializer.new(Player.all)
+          players = []
+          players.push(player)
+          render json: PlayerSerializer.new(players)
 
       end
 
