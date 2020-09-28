@@ -16,19 +16,14 @@ ActiveRecord::Schema.define(version: 2020_09_28_004816) do
     t.integer "currPlayer"
     t.boolean "winStatus"
     t.string "winnerName"
-    t.string "timeStamp"
-    t.integer "gameId"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "timeStamp"
   end
 
   create_table "players", force: :cascade do |t|
     t.string "name"
     t.integer "currentPostion"
-    t.integer "gameId"
+    t.datetime "timeStamp"
     t.integer "playerId"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

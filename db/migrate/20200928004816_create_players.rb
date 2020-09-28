@@ -3,10 +3,10 @@ class CreatePlayers < ActiveRecord::Migration[6.0]
     create_table :players do |t|
       t.string :name
       t.integer :currentPostion
-      t.integer :gameId
+      t.timestamp :timeStamp
       t.integer :playerId
 
-      t.timestamps
+     
     end
   end
 end
