@@ -18,7 +18,7 @@ class GameController < ApplicationController
       end
 
        def game_params
-         params.require(:game).permit(:name, :currentPostion, :id, :gameId, :currPlayer, :winStatus, :timeStamp, :winnerName,  )
+         params.require(:game).permit(:name, :currentPostion, :playerId, :gameId)
       end
     
 end

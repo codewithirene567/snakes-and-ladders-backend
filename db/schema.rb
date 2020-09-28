@@ -22,7 +22,10 @@ ActiveRecord::Schema.define(version: 2020_09_28_004816) do
   end
 
   create_table "players", force: :cascade do |t|
-    t.string "allPlayersstring"
+    t.string "name"
+    t.integer "currentPostion"
+    t.integer "gameId"
+    t.integer "playerId"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
