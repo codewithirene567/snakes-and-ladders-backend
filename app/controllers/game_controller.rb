@@ -6,7 +6,15 @@ class GameController < ApplicationController
 
       def create
           game = Game.new(game_params)
+          #byebug
           game.save
+          #iterate over all params[:allplayers].each 
+          #find_or_create_by name 
+          #returns an object
+          #player.game_id = game.id
+          #make it so that the game has many players and players belongs to a game
+          #remove for loop that sends multiple fetch request
+          #2:30 est
           render json: GameSerializer.new(Game.all)
 
       end

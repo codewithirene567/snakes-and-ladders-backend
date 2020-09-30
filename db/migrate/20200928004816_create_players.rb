@@ -5,6 +5,7 @@ class CreatePlayers < ActiveRecord::Migration[6.0]
       t.integer :currentPostion
       t.integer :timeStamp
       t.integer :playerId
+      #game_id integer
 
      
     end
