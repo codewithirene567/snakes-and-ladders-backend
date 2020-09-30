@@ -31,7 +31,7 @@ class PlayerController < ApplicationController
       end
 
        def player_params
-         params.require(:player).permit(:name, :currentPostion, :playerId, :timeStamp)
+         params.require(:player).permit(:id, :name, :currentPostion, :playerId, :timeStamp)
       end
      
 end

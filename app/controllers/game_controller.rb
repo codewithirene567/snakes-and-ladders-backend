@@ -25,6 +25,16 @@ class GameController < ApplicationController
 
       end
 
+      def update
+        game = Game.find_by_id(params[:id])
+        game.update(game_params)
+        if game.save
+          render json: PlayerSerializer.new(game)
+        else
+          render json: {error: 'Could not find game'}
+        end 
+      end
+
        def game_params
          params.require(:game).permit(:id, :currPlayer, :winStatus, :winnerName, :timeStamp)
       end
