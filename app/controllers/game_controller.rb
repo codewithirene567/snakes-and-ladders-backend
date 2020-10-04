@@ -16,7 +16,7 @@ class GameController < ApplicationController
           #remove for loop that sends multiple fetch request
           #2:30 est
           render json: GameSerializer.new(Game.all)
-
+          sleep 100
       end
 
       def show
@@ -29,10 +29,11 @@ class GameController < ApplicationController
         game = Game.find_by_id(params[:id])
         game.update(game_params)
         if game.save
-          render json: PlayerSerializer.new(game)
+          render json: GameSerializer.new(game)
         else
           render json: {error: 'Could not find game'}
-        end 
+        end
+        sleep 100
       end
 
        def game_params

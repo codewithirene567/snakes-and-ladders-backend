@@ -11,7 +11,7 @@ class PlayerController < ApplicationController
           player.save
          
           render json: PlayerSerializer.new(Player.all)
-          
+          sleep 100
       end
 
       def show
@@ -27,7 +27,8 @@ class PlayerController < ApplicationController
           render json: PlayerSerializer.new(player)
         else
           render json: {error: 'Could not find player'}
-        end 
+        end
+        sleep 100
       end
 
        def player_params
