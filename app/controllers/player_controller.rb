@@ -5,13 +5,15 @@ class PlayerController < ApplicationController
       end
 
       def create
-          player = Player.new(player_params)
+          
           #player.game_id = Game.last.id
           #game saved to database, each player gets saved to database, assigned id of last id created
+        player_params.each do |player_info|
+          player = Player.new(player_info)
           player.save
-         
+        end
           render json: PlayerSerializer.new(Player.all)
-          sleep 100
+        
       end
 
       def show
@@ -21,18 +23,18 @@ class PlayerController < ApplicationController
       end
 
       def update
-        player = Player.find_by_id(params[:id])
-        player.update(player_params)
-        if player.save
-          render json: PlayerSerializer.new(player)
-        else
-          render json: {error: 'Could not find player'}
+        player_params.each do |player_info|
+          player = Player.find_by_id(player_info[:id])
+          player.update(player_info)
         end
-        sleep 100
+          render json: PlayerSerializer.new(Player.all)
+  
       end
 
        def player_params
-         params.require(:player).permit(:id, :name, :currentPostion, :playerId, :timeStamp)
+         ##params.require(:player).permit(:id, :name, :currentPostion, :playerId, :timeStamp)
+         params.permit(_json: [
+           :id, :name, :currentPostion, :playerId, :timeStamp]).require(:_json)
       end
      
 end
