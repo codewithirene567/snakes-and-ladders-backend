@@ -1,3 +1,6 @@
 class Game < ApplicationRecord
-    # has_many :players
+    # ORM
+    # game = Game.create(name: '..')
+    # game.players.create!(name: '', currentPosition: '')
+    # game.update(name: '...')
 end
