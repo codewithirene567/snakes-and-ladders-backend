@@ -12,7 +12,7 @@ class PlayerController < ApplicationController
           player = Player.new(player_info)
           player.save
         end
-          render json: PlayerSerializer.new(Player.all)
+          render json: PlayerSerializer.new(player_params[0])
         
       end
 
@@ -25,9 +25,10 @@ class PlayerController < ApplicationController
       def update
         player_params.each do |player_info|
           player = Player.find_by_id(player_info[:id])
+          
           player.update(player_info)
         end
-          render json: PlayerSerializer.new(Player.all)
+          render json: PlayerSerializer.new(player_params[0])
   
       end
 

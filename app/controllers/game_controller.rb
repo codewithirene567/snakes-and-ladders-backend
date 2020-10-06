@@ -15,7 +15,7 @@ class GameController < ApplicationController
           #make it so that the game has many players and players belongs to a game
           #remove for loop that sends multiple fetch request
           #2:30 est
-          render json: GameSerializer.new(Game.all)
+          render json: GameSerializer.new(game)
           sleep 100
       end
 
